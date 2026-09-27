@@ -212,7 +212,7 @@ Six cases is a small sample, but the failures are consistent across models and p
 
 ## v2: role probe
 
-_Not part of v1. Recorded so the v1 interface leaves room for it._
+_Superseded by [the role probe plan](role-analyzer-probe.md), which also corrects this section: the paper trains on neutral text wrapped in every role, so no role-labeled corpus is needed._
 
 While an LLM reads a prompt, it computes a vector (a hidden state) for every token at every layer. The [role-confusion](https://role-confusion.github.io/) research found that these vectors record which role the model thinks each token belongs to, and that a simple linear classifier (a probe) can read it.
 
