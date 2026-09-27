@@ -10,6 +10,8 @@ Detects prompt injection by finding text that pretends to be a role it is not.
 
 LLMs don't trust role tags alone. They also judge a role by its writing style. Tool output that *sounds* like a system prompt or like the model's own reasoning gets treated as one. Prompt Protector measures how each part of a prompt will be perceived and flags the parts that don't match their label.
 
+It can also scan context files (retrieved documents, uploads, web pages) before they go into a prompt. At that point you still know the file is data, even if the app later pastes it into the system prompt.
+
 ## Who?
 
 | Persona | Needs |
