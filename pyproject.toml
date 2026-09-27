@@ -1,0 +1,47 @@
+[project]
+name = "prompt-protector"
+version = "0.1.0"
+description = "Detects prompt injection by finding text that pretends to be a role it is not."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[project.optional-dependencies]
+model = [
+    "torch>=2.9",
+    "transformers>=4.51",
+    "huggingface-hub>=0.30",
+]
+
+[project.scripts]
+prompt-protector = "prompt_protector.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "hypothesis>=6",
+    "ruff>=0.12",
+]
+
+[build-system]
+requires = ["uv_build>=0.8,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not model'"
+markers = ["model: needs the downloaded model; run with `pytest -m model`"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
