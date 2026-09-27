@@ -12,6 +12,9 @@ model = [
     "transformers>=4.51",
     "huggingface-hub>=0.30",
 ]
+train = [
+    "scikit-learn>=1.9.1",
+]
 
 [project.scripts]
 prompt-protector = "prompt_protector.cli:main"
