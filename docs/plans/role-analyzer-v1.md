@@ -169,7 +169,7 @@ One commit per step. A step is done when its check passes.
 
 ## Step 0 results (2026-09-27)
 
-**Verdict: no-go for zero-shot as specified.** Neither model is close to the pass criteria. Steps 3–6 are on hold until the approach is decided.
+**Verdict: no-go for zero-shot as specified.** Neither model is close to the pass criteria. Steps 3–6 are dropped; the Role Analyzer moves to the [role probe](#v2-role-probe). Full write-up: [zero-shot spike report](../reports/2026-09-27-zero-shot-spike.md).
 
 Models: `Qwen/Qwen3-0.6B` at `c1899de289a04d12100db370d81485cdf75e47ca`, `Qwen/Qwen3-1.7B` at `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`. bf16, CPU, 6 threads.
 
